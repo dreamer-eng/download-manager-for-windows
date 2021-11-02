@@ -1,8 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.ComponentModel;
-using System.Net;
-using System.Threading;
 using System.Collections.Generic;
 
 namespace download
