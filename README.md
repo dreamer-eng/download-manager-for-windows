@@ -33,4 +33,4 @@ Mandatory arguments to long options are mandatory for short options too. <br />
  <br />  <br /> 
 <h2>👾 Example of use: </h2>
    &nbsp;&nbsp; download -u https://www.google.com/ -d C:/users/user01/Desktop/index.html -t 12 <br /> 
-   &nbsp;&nbsp; download -u https://www.google.com/^https://ggames.5v.pl/kctf.zip -o index.html,website.zip <br /> 
+   &nbsp;&nbsp; download -u https://www.google.com/,https://ggames.5v.pl/kctf.zip -o index.html,website.zip <br /> 
