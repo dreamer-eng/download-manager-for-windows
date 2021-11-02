@@ -1,5 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.ComponentModel;
+using System.Net;
+using System.Threading;
 using System.Collections.Generic;
 
 namespace download
@@ -17,7 +20,7 @@ namespace download
             {
                 if(args[i] == "-u" || args[i] == "--url")
                 {
-                    string[] ar = args[i + 1].Split(",");
+                    string[] ar = args[i + 1].Split("^");
                     for(int j = 0; j < ar.Length; j++)
                     {
                         url.Add(ar[j]);
@@ -31,7 +34,7 @@ namespace download
 
                     for(int j = 0; j < ar.Length; j++)
                     {
-                        filePath.Add(filePath[j]);
+                        filePath.Add(ar[j]);
                     }
      
                     done[1] = true;
@@ -99,13 +102,13 @@ namespace download
 "Download the file from the provided URL."+"\n"+
 "Mandatory arguments to long options are mandatory for short options too."+"\n" +
 "   -u,--url                    url from which to download the file (string)" +"\n"+
-"   -d,--destination            path where the file will be downloaded (string)"+ "\n"+
+"   -d,--destination            path where the file will be downloaded (string)^(string)"+ "\n"+
 "   -o,--output                 path in the current path where the file should be saved (string)" + "\n" +
 "   -t,--timeout                maximum waiting time (sec) for a file to be downloaded. Default is 10 sec (int)" + " \n"+
 "   -h,--help                   displaying the instructions for using this program"+ " \n\n"+
 "Example of use:"+"\n"+
 "   download -u https://www.google.com/ -d C:/users/user01/Desktop/html.index -t 12 \n"+
-"   download -u https://www.google.com/,https://ggames.5v.pl/kctf.zip -o index.html,website.zip" + "\n\n\n"
+"   download -u https://www.google.com/^https://ggames.5v.pl/kctf.zip -o index.html,website.zip" + "\n\n\n"
 );
         }
 
