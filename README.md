@@ -9,6 +9,6 @@ Mandatory arguments to long options are mandatory for short options too. <br />
    &nbsp; -t,--timeout                maximum waiting time (sec) for a file to be downloaded. Default is 10 sec (int) <br /> 
    &nbsp; -h,--help                   displaying the instructions for using this program <br /> 
  <br />  <br /> 
-Example of use: <br /> 
+<h2>Example of use: </h2><br /> 
    &nbsp; download -u https://www.google.com/ -d C:/users/user01/Desktop/html.index -t 12 <br /> 
    &nbsp; download -u https://www.google.com/,https://ggames.5v.pl/kctf.zip -o index.html,website.zip <br /> 
