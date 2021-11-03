@@ -84,7 +84,8 @@ namespace download
             if (done[0] && done[1])
             {
                 Console.WriteLine();
-                for (int i = 0; i < url.Count; i++)
+                int count = url.Count < filePath.Count ? url.Count : filePath.Count;
+                for (int i = 0; i < count; i++)
                 {
                     var success = FileDownloader.DownloadFile(url[i], filePath[i], timeout * 1000);
                     string success_log = "";
