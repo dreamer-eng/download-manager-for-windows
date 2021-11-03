@@ -64,5 +64,14 @@ namespace download
 			streamWriter.Close();
 			stream.Close();
         }
+
+		public void logClear()
+        {
+			FileStream stream = new FileStream(_logPath, FileMode.OpenOrCreate);
+			StreamWriter streamWriter = new StreamWriter(stream);
+			streamWriter.Write("");
+			streamWriter.Close();
+			stream.Close();
+		}
 	}
 }

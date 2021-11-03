@@ -69,7 +69,12 @@ namespace download
                 else if(args[i] == "-l" || args[i] == "--log")
                 {
                     if (args.Length > i + 1)
-                        log(logsObj, int.Parse(args[i+1]));
+                    {
+                        if (args[i + 1] == "clear")
+                            clearLogs(logsObj);
+                        else
+                            log(logsObj, int.Parse(args[i + 1]));
+                    }   
                     else
                         log(logsObj);
                     return;
@@ -130,8 +135,9 @@ namespace download
 "Example of use:" +"\n"+
 "   download -u https://www.google.com/ -d C:/users/user01/Desktop/html.index -t 12 \n"+
 "   download -u https://www.google.com/,https://ggames.5v.pl/kctf.zip -o index.html,website.zip" + "\n" +
-"   download -l"+
-"   download -l 5" + "\n\n\n"
+"   download -l \n"+
+"   download -l 5 \n" +
+"   download -l clear" + "\n\n\n"
 );
         }
 
@@ -171,11 +177,19 @@ namespace download
 
         public static void log(Log logs,int lines)
         {
+            Console.WriteLine("Logs:");
             Console.Write(logs.logDisplay(lines));
         }
         public static void addLog(Log logs,string log)
         {
             logs.logAdd(log);
         }
+
+        public static void clearLogs(Log logs)
+        {
+            logs.logClear();
+            Console.WriteLine("Logs have been cleared");
+        }
+      
     }
 }
